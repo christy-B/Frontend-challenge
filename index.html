@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+
+<body>
+  <header class="flex">
+
+    <div class="menu-xs">
+      <img src="images\icon-menu.svg" alt="menu" onclick="openMenu()">
+      <div id="menuClose" class="menu-close">
+        <img src="images\icon-close.svg" alt="close" class="close-img" onclick="closeMenu()">
+        <ul class="menu-content">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li> 
+          <li><a href="#">Contact</a></li> 
+        </ul>
+      </div>
+    </div>
+  
+    <div class="navbar flex">
+      <div class="navbar-brand">
+        <img src="images\logo.svg" alt="logo">
+      </div>
+      <nav class="nav flex">
+        <ul class="ul-nav flex">
+          <li class="li-nav "><a href="#" class="li-nav-a border">Collections</a></li>
+          <li class="li-nav "><a href="#" class="li-nav-a border">Men</a></li>
+          <li class="li-nav "><a href="#" class="li-nav-a border">Women</a></li>
+          <li class="li-nav "><a href="#" class="li-nav-a border">About</a></li>
+          <li class="li-nav "><a href="#" class="li-nav-a border">Contact</a></li>
+        </ul>
+        <ul class="ul-nav flex">
+          <li class="li-nav" onclick="cartOnclick()"><a href="#" class="cart"><img src="images\icon-cart.svg" alt="cart" class="header-cart"><span class="cart-compter"></span></a></li>
+          <li class="li-nav"><a href="#" class="avatar"><img src="images\image-avatar.png" alt="avatar"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="modal" class="modal">
+    <div class="modal-cart">
+      <div class="modal-cart-title">Cart</div>
+      <div class="modal-cart-body">
+        <div class="empty">Your cart is empty.</div> 
+        <div class="cart-product"></div>
+        <button class="btn-checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="main flex">
+    <div class="bloc-img">
+      <div class="bloc-big-img" onclick="zoomImage()"> 
+        <img src="images\image-product-1.jpg" alt="" class="big-img">
+        <button class="previous flex" onclick="prevSlide();"><img src="images\icon-previous.svg" alt=""></button>
+        <button class="next flex" onclick="nextSlide()"><img src="images\icon-next.svg" alt=""></button>
+      </div>
+      <div class="small-img flex">
+       <div class="bloc-small-img border-style" id="border-img1">
+        <img src="images\image-product-1-thumbnail.jpg" alt=""  class="img-style "  id="A" onclick="selectImage_1()">
+       </div>
+        <div class="bloc-small-img" id="border-img2">
+          <img src="images\image-product-2-thumbnail.jpg" alt=""  id="B"  onclick="selectImage_2()">
+        </div>
+        <div class="bloc-small-img" id="border-img3">
+          <img src="images\image-product-3-thumbnail.jpg" alt=""  id="C" onclick="selectImage_3()">
+        </div>
+       <div class="bloc-small-img" id="border-img4">
+        <img src="images\image-product-4-thumbnail.jpg" alt=""  id="D" onclick="selectImage_4()">
+       </div>
+      </div>
+    </div>
+    <div class="bloc-text flex">
+      <h4 class="bloc-text-slogan">SNEAKER COMPANY</h4>
+      <h1 class="bloc-text-title"> Fall Limited Edition Sneaker</h1>
+      <p class="bloc-text-paragraphe">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      <div class="price flex">
+        <div class="price-promo flex" >
+          <h2 class="normal-price">$125.00</h2> 
+          <span class="promo flex">50%</span>
+        </div>
+        <p class="price-underline">$250.00</p>
+      </div>
+      <div class="btn flex">
+        <button class="btn-light flex btn-btn"><img src="images\icon-minus.svg "class="icon-minus" alt="" onclick="FonctionMinus()"><span class="number">0</span><img src="images\icon-plus.svg" alt="" class="icon-plus" onclick="FonctionPlus()"></button>
+        <button class="btn-add flex btn-btn" onclick="FonctionCart()" ><img src="images\icon-cart-white.svg" alt="" class="cart-white"> Add to cart </button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="zoom" class="main flex zoom">
+    <div class="zoom-bloc">
+     <div class="zoom-icon-close">
+      <span onclick="zoomHide()">
+        <img src="images\icon-close-white.svg" alt="" class="svg-close" onmouseover="changeSVGClose()" onmouseleave="changeSVGClose_()">
+      </span>
+      
+     </div>
+      <div  class="bloc-img_">
+        <div class="bloc-big-img_"> 
+          <img src="images\image-product-1.jpg" alt="" class="big-img_">
+          <button class="previous_ flex" onclick="prevSlide_();"><img src="images\icon-previous.svg" alt="" class="svg-prev" onmouseover="changeSVGPrev()" onmouseleave="changeSVGPrev_()"></button>
+          <button class="next_ flex" onclick="nextSlide_()"><img src="images\icon-next.svg" alt="" class="svg-next" onmouseover="changeSVGNext()" onmouseleave="changeSVGNext_()"></button>
+        </div>
+        <div class="flex small-bloc">
+          <div class="small-img_ flex">
+            <div class="bloc-small-img_ border-style" id="border-img1_">
+             <img src="images\image-product-1-thumbnail.jpg" alt=""  class="img-style "  id="A_" onclick="selectImage_1_()">
+            </div>
+             <div class="bloc-small-img_" id="border-img2_">
+               <img src="images\image-product-2-thumbnail.jpg" alt=""  id="B_"  onclick="selectImage_2_()">
+             </div>
+             <div class="bloc-small-img_" id="border-img3_">
+               <img src="images\image-product-3-thumbnail.jpg" alt=""  id="C_" onclick="selectImage_3_()">
+             </div>
+            <div class="bloc-small-img_" id="border-img4_">
+             <img src="images\image-product-4-thumbnail.jpg" alt=""  id="D_" onclick="selectImage_4_()">
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Nebie Ebou Christelle</a> .
+  </div-->
+  <script src="js/main.js"></script>
+</body>
+</html>
